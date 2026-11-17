@@ -16,7 +16,7 @@ services:
       - backend
 
   web:
-    image: ghcr.io/${GHCR_OWNER}/si-web:latest
+    image: ghcr.io/${GHCR_OWNER}/seenit-web-frontend:latest
     restart: unless-stopped
     environment:
       NODE_ENV: production
@@ -26,7 +26,7 @@ services:
       - backend
 
   backend:
-    image: ghcr.io/${GHCR_OWNER}/si-backend:latest
+    image: ghcr.io/${GHCR_OWNER}/seenit-backend:latest
     restart: unless-stopped
     environment:
       NODE_ENV: production

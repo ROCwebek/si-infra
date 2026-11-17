@@ -4,12 +4,12 @@ Infrastruktur og deploy-opsætning for SeenIt.
 
 SeenIt kører på én Hetzner Cloud-server, hvor Docker Compose starter fire containere:
 
-| Container | Rolle |
-|---|---|
-| `caddy` | Reverse proxy og automatisk HTTPS (Let's Encrypt) |
-| `web` | Next.js-frontend (image fra GHCR) |
-| `backend` | NestJS-API med TypeORM (image fra GHCR) |
-| `postgres` | Database med data i et Docker volume |
+| Container  | Rolle                                             |
+| ---------- | ------------------------------------------------- |
+| `caddy`    | Reverse proxy og automatisk HTTPS (Let's Encrypt) |
+| `web`      | Next.js-frontend (image fra GHCR)                 |
+| `backend`  | NestJS-API med TypeORM (image fra GHCR)           |
+| `postgres` | Database med data i et Docker volume              |
 
 Images til `web` og `backend` bygges i GitHub Actions i hvert sit repo og pushes til GitHub Container Registry. Dette repo bygger ingen kode, men henter de færdige images.
 
@@ -23,8 +23,8 @@ Images til `web` og `backend` bygges i GitHub Actions i hvert sit repo og pushes
 
 Vi bruger sslip.io, så der skal ikke oprettes DNS-records:
 
-- Frontend: `https://<ip-med-bindestreger>.sslip.io`
-- API: `https://api.<ip-med-bindestreger>.sslip.io`
+- Frontend: `https://app.2-29-189-168.sslip.io/`
+- API: `https://api.2-29-189-168.sslip.io/`
 
 ## Første deploy
 

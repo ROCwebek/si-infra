@@ -1,0 +1,9 @@
+# Frontend: https://ditdomæne.dk
+{$DOMAIN} {
+	reverse_proxy web:3000
+}
+
+# Backend API: https://api.ditdomæne.dk
+api.{$DOMAIN} {
+	reverse_proxy backend:3000
+}
